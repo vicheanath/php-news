@@ -1,0 +1,69 @@
+.yellow {
+  background: #c70d11;
+}
+.ping {
+  background: #d94e5a;
+}
+.hot-ping {
+  background: #d94a64;
+}
+.red {
+  background: #730d1f;
+}
+.write {
+  background: #d0e5f2;
+}
+.b-yellow {
+  border-top: 3px solid #c70d11;
+}
+.b-black {
+  background: #333 !important;
+}
+.facebook-color {
+  color: #3b5998 !important;
+}
+.youtube-color {
+  color: #c4302b !important;
+}
+/* loading */
+
+.load-img {
+  border-radius: 7px;
+  width: 100%;
+  height: 140px;
+  animation: pulse 1s infinite ease-in-out;
+  -webkit-animation: pulse 1s infinite ease-in-out;
+}
+.load-title {
+  height: 10px;
+  animation: pulse 1s infinite ease-in-out ;
+  -webkit-animation: pulse 1s infinite ease-in-out;
+}
+.load-title:nth-child(1){
+    width: 140px;
+}
+.load-title:nth-child(1){
+    width: 110px;
+}
+@keyframes pulse {
+  0% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+  50% {
+    background-color: rgba(165, 165, 165, 0.3);
+  }
+  100% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+}
+@-webkit-keyframes pulse {
+  0% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+  50% {
+    background-color: rgba(165, 165, 165, 0.3);
+  }
+  100% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+}

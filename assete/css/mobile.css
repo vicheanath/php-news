@@ -1,0 +1,209 @@
+/* Mobile*/
+@media (max-width: 767.98px) {
+    section#content .ads-site{
+        width: 100%;
+    }
+    .container{
+        all: unset;
+    }
+    section#header .top-header .ads-right-logo{
+        display: none;
+    }
+    section#header .top-header .top-logo{
+        background-color: #000000;
+    }
+    section#header .top-header .top-logo .main-logo{
+        width: auto;
+        height: 50px;
+        align-self:center;
+    }
+    section#header .top-header .top-logo .main-logo img{
+        padding: 2.5px;
+        height: 50px;
+    }
+    section#header .top-header .menu-icon{
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 30px;
+        color: #fff;
+    }
+/*    menu-mobile*/
+    section#header .top-menu{
+        overflow: hidden;
+        width: 100%;
+        background-color: #C70D11;
+        padding: 0;
+        position: absolute;
+        display: none;
+        z-index: 10;
+        }
+    section#header  .top-menu .menu ul{
+        margin: 15px;
+        padding: 0;
+    }
+    section#header  .top-menu .menu ul li{
+        margin: 5px 0;
+        list-style: none;
+        float: left;
+        width: 50%;
+    }
+    section#header  .top-menu .menu ul li a{
+        text-decoration: none;
+        color: #fff;
+        font-family: 'Dangrek', cursive;
+        font-size: 18px;
+    }
+    section#header  .top-menu .menu ul li a:hover{
+        color: #d8d8d8;
+    }
+    section#content .container a .category{
+        margin-top: 0;
+    }
+    section#content .box-content{
+		height: auto;
+		overflow: hidden;
+        padding: 10px 0;
+    }
+	section#content .box-content .row{
+		overflow-y: hidden;
+		overflow-x: scroll;
+		flex-wrap: nowrap;
+	}
+	section#content .box-content .item{
+		overflow: hidden;
+	}
+	section#content .box-content .item a{
+		width: 180px;
+	}
+	section#content .box-content .item .image {
+		height: 100px;
+		width: 180px;
+	}
+	section#content .container .content-text{
+		padding: 10px;
+	}
+/*    hidden_ads*/
+    .mobile-hidden{
+        display: none;
+    }
+    .slide{
+        display: none;
+        transition: 0.5s;
+    }
+    section#content .slide-site{
+        width: 100%;
+        height: 254px;
+        overflow: hidden;
+        margin-top: 0;
+    }
+     #pre,#next{
+        position:absolute;
+        float: left;
+        z-index: 5;
+        color: #fff;
+        padding: 20px;
+        font-size: 25px;
+        top: 140px;
+        
+    }
+    #pre{
+        left: 5px;
+    }
+    #next{
+        float: right;
+        right: 5px;
+    }
+    section#content .slide-site .slide{
+        width: 100%;
+
+    }
+    /* cate */
+    section#content .container .contain-cate{
+        margin-top: 10px;
+        padding: 0;
+    }
+    section#content .container .contain-cate .head-cate{
+     margin: 0;
+    }
+    /* mobile footer */
+    section#footer .address,.info,.contuct{
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    section#header .top-header .menu-icon{
+        display: none;
+    }
+    /*top-header*/
+    section#header{
+        background-color: #333;
+    }
+    section#header .top-header{
+        height: 110px;
+    }
+    /*Top-logo*/
+    section#header .top-header .top-logo{
+        float: left;
+        padding:5px 0;
+    }
+	section#header .top-header .top-logo img{
+		height: 100px;
+	}
+    section#header .top-header .top-logo .main-logo{
+        width: 100px;
+        height: 100px;
+        background-color: #ddd;
+        text-align: center;
+    }
+
+    /*top-ads*/
+    section#header .top-header .ads-right-logo{
+        float: right;
+        padding:15px 0;
+        height: 100%;
+        max-width: calc(100% - 110px);
+    }
+    section#header .top-header .ads-right-logo .ads-728x90{
+        float: right;
+        background-color: #4b7bec;
+        text-align: center;
+    }
+    section#header .top-header .ads-right-logo .ads-728x90 img{
+        height: 100%;
+        width: 100%;
+
+    }
+    /*top-menu*/
+    section#header .top-menu{
+        float: left;
+        width: 100%;
+        height: 50px;
+        background-color: #C70D11;
+        padding: 0;
+    }
+    section#header  .top-menu .menu{
+        padding: 0
+    }
+    section#header  .top-menu .menu ul{
+        margin: 15px 0;
+        padding: 0;
+    }
+    section#header  .top-menu .menu ul li{
+        list-style: none;
+        float: left;
+    }
+    section#header  .top-menu .menu ul li a{
+        padding: 9px;
+        text-decoration: none;
+        color: #fff;
+        font-family: 'Dangrek', sans-serif;
+        font-size: 18px;
+    }
+    #pre,#next{
+        display: none;
+    }
+    
+}
+

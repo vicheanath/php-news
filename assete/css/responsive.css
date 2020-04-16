@@ -1,0 +1,74 @@
+/* desktop*/
+@media (min-width: 992px) {
+  section#header .top-header .menu-icon {
+    display: none;
+  }
+  /*top-header*/
+  section#header {
+    background-color: #333;
+  }
+  section#header .top-header {
+    height: 110px;
+  }
+  /*Top-logo*/
+  section#header .top-header .top-logo {
+    padding: 5px 0;
+    float: left;
+  }
+  section#header .top-header .top-logo .main-logo {
+    width: auto;
+    height: 100px;
+    text-align: center;
+    float: left;
+  }
+  section#header .top-header .top-logo .main-logo img {
+    height: 100px;
+  }
+
+  /*top-ads*/
+  section#header .top-header .ads-right-logo {
+    float: right;
+    padding: 10px 0;
+    height: 100%;
+  }
+  section#header .top-header .ads-right-logo .ads-728x90 {
+    height: 90px;
+    width: auto;
+    text-align: center;
+  }
+  /*top-menu*/
+  section#header .top-menu {
+    width: 100%;
+    height: auto;
+    background-color: #c70d11;
+    padding: 0;
+  }
+  section#header .top-menu .menu {
+    padding: 0;
+    display: flex;
+  }
+  section#header .top-menu .menu ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+  }
+  section#header .top-menu .menu ul li {
+    list-style: none;
+    padding: 10px 15px;
+    margin: 0;
+  }
+  section#header .top-menu .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Dangrek", cursive;
+    font-size: 18px;
+  }
+  section#header .top-menu .menu ul li a:hover {
+    color: #f8f8f8;
+  }
+  #pre,
+  #next {
+    display: none;
+  }
+}

@@ -1,0 +1,326 @@
+/*Fonts
+font-family: 'Dangrek', cursive;
+font-family: 'Kantumruy', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+body {
+  background-color: #f0f0f0;
+  color: #222;
+  font-family: "Kantumruy", "Roboto";
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+section#content .slide-site {
+  background-color: #fff;
+  width: calc(100% - 308px);
+  float: left;
+  margin-top: 15px;
+  overflow: hidden;
+}
+section#content .slide-site .slide {
+  height: 254px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  overflow: hidden;
+}
+section#content .slide-site .slide a {
+  text-decoration: none;
+  color: #ddd;
+}
+
+section#content .slide-site .slide a .image-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #000;
+  float: left;
+}
+section#content .slide-site .slide a .main-des {
+  position: absolute;
+  font-family: "Kantumruy", "Roboto";
+  padding-left: 20px;
+  bottom: 40px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+section#content .slide-site .slide a .main-des .title {
+  font-size: 22px;
+  transition: 0.5s;
+}
+section#content .slide-site .slide a .date {
+  position: absolute;
+  font-family: "Kantumruy", "Roboto";
+  bottom: 15px;
+  left: 25px;
+  transition: 0.5s;
+  z-index: 1;
+}
+.active {
+  background: #ad070a;
+}
+section#content .ads-site {
+  margin-top: 15px;
+  width: 300px;
+  float: right;
+}
+section#content .ads-site .ads-1 {
+  width: 100%;
+  height: 250px;
+  background: #333;
+}
+section#content .ads-site .ads-2 {
+  margin-top: 10px;
+  width: 100%;
+  height: 250px;
+  background: #333;
+}
+.slide a .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0,
+    rgba(0, 0, 0, 0.8) 60%,
+    #000 100%
+  );
+  opacity: 0.5;
+  transition: 0.5s;
+}
+section#content .slide-site a span {
+  position: absolute;
+  font-family: "Kantumruy", "Roboto";
+  z-index: 2;
+  display: block;
+  padding: 5px 20px 5px 5px;
+  top: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+section#content .container a .category {
+  display: inline-block;
+  font-family: "Dangrek", "Roboto";
+  font-size: 20px;
+  padding: 7px 25px 3px 25px;
+  border-top-right-radius: 30px;
+  color: #fff;
+  margin-top: 20px;
+  z-index: 1;
+  position: relative;
+}
+section#content .container a .category span {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  z-index: 2;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+}
+section#content .box-content {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 10px 15px;
+  display: inline-block;
+  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+section#content .box-content .item a {
+  width: 100%;
+  text-decoration: none;
+  color: #000000;
+}
+section#content .box-content .item {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: 195px;
+  padding: 8px;
+}
+section#content .box-content .item .img-box {
+  width: 100%;
+  border-radius: 7px;
+  height: 140px;
+  overflow: hidden;
+}
+section#content .box-content .item .image {
+  transform: scale(1.05);
+  width: 100%;
+  height: 140px;
+  background-color: #ddd;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.5s, filter 1.5s ease-in-out;
+}
+section#content .box-content .item:hover .image {
+  transform: scale(1);
+  -moz-box-shadow: inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 20px #000000;
+}
+section#content .box-content .item .title {
+  font-family: "Kantumruy", "Roboto";
+  display: block;
+  width: 100%;
+}
+/* article */
+#img-background {
+  -webkit-filter: blur(6px);
+  -moz-filter: blur(6px);
+  -ms-filter: blur(6px);
+  filter: blur(6px);
+  height: 100vh;
+  position: absolute;
+  z-index: -2;
+}
+section#content .container .content-text {
+  background-color: #ffff;
+  padding: 20px 35px;
+  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  height: 100%;
+  margin-bottom: 15px;
+  border-radius: 20px;
+}
+section#content .container .content-text .title-news {
+  font-family: "Kantumruy", "Roboto";
+  font-size: 22px;
+  height: auto;
+}
+section#content .container .content-text .date {
+  padding: 20px 0;
+  float: left;
+}
+section#content .container .content-text .views {
+  float: right;
+  padding: 20px 0;
+}
+.btn-share {
+  cursor: pointer;
+  padding: 5px 15px;
+  margin: 15px;
+  display: inline-block;
+  color: #fff;
+  border-radius: 10px;
+}
+section#content .container .content-text .body-text {
+  font-family: "Kantumruy", "Roboto";
+  font-size: 16px;
+  border-top: 1px solid #dddd;
+  width: 100%;
+  float: left;
+  padding: 15px 0;
+  line-height: 2;
+  overflow: hidden;
+}
+section#content .container .content-text .body-text img {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+/*aside*/
+section#content .container .aside {
+  border-radius: 20px;
+  padding: 10px 20px;
+  background-color: #ffff;
+  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  height: 100%;
+}
+section#content .container .aside .top-view {
+  padding: 0;
+  margin: 0;
+}
+section#content .container .aside a {
+  text-decoration: none;
+  color: #333;
+}
+section#content .container .aside h1 {
+  font-family: "Dangrek", "Roboto";
+  font-size: 25px;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
+section#content .container .aside span {
+  display: inline-block;
+  margin: 0;
+  width: 60px;
+  height: 5px;
+  background: #ad070a;
+  border-radius: 2.5px;
+}
+section#content .container .aside .iteme-aside {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 100px 60% 2fr auto;
+  margin: 10px 0;
+}
+section#content .container .aside .aside-img {
+  width: 100px;
+  height: 70px;
+  background-size: cover !important;
+}
+section#content .container .aside p {
+  width: 100%;
+  padding: 0 0 0 10px;
+}
+/*Item Cate*/
+#btn-more {
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 10px 45%;
+  padding: 10px 15px;
+  display: inline-block;
+  color: #fff;
+  background: #ad070a;
+}
+section#content .container .contain-cate {
+  border-radius: 20px;
+  padding: 0;
+}
+section#content .container .contain-cate .line {
+  height: 1px;
+  width: 100%;
+  background: #fff;
+}
+section#content .container .contain-cate .head-cate h2 {
+  text-align: center;
+  width: 100%;
+  font-family: "Dangrek", "Roboto";
+  font-size: 25px;
+  padding: 10px;
+  color: #fff;
+  margin: auto;
+}
+section#content .container .cate-item {
+  display: grid;
+  grid-template-columns: 205px auto 2fr auto;
+  margin: 10px;
+}
+section#content .container a {
+  text-decoration: none;
+  color: #333;
+}
+section#content .container .cate-item .image-item {
+  justify-content: space-around;
+  height: 100px !important;
+  width: 200px !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+section#content .container .cate-item .detail {
+  padding-left: 10px;
+}
+section#content .container .cate-item .detail .title {
+  font-size: 18px;
+}
