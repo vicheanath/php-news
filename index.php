@@ -3,8 +3,8 @@ include("_config_inc.php");
 include BASE_PATH . "admin/action/db/db.php";
 $db = new Database;
 include BASE_PATH . "include/header.php";
-$url='';
-$title='Vreport News';
+$url = '';
+$title = 'Vreport News';
 $des = 'news site in cambodia';
 $img = 'assete/images/logo.png';
 
@@ -91,10 +91,10 @@ include BASE_PATH . "include/og.php";
 			<!-- endAds -->
 			<!-- category -->
 			<?php
-			include BASE_PATH . ("include/content-box.php")
+			//include BASE_PATH . ("include/content-box.php")
 			?>
 
-
+			<div class="main-body"></div>
 		</div>
 	</section>
 	<!--	Footer-->

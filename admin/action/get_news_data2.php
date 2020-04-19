@@ -20,8 +20,9 @@ $post_data=$db->select_inner_join_data($sql);
 				"img"=>$row[4],
 				"od"=>$row[7],
 				"status"=>$row[8],
-				"menu_id"=>$row[1],
-				"menu_name"=>$row[9],
+				"menu_id"=>$row[0],
+				"menu_link"=>$row[9],
+				"menu_name"=>$row[1],
 				"status2"=>'true',
 				);						
 		 }

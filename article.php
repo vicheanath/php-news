@@ -85,7 +85,6 @@ include BASE_PATH . "include/og.php";
 				var arr = img[i].src.split('/');
 				var lastArr = arr[arr.length - 1];
 				img[i].src = url+lastArr;
-				console.log(img[i].src);
 			}
 		});
 	</script>

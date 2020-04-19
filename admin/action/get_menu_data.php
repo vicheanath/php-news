@@ -3,9 +3,13 @@ include('db/db.php');
 $db = new Database;
 $e=$_POST['e'];
 $s=$_POST['s'];
+if(isset($_POST['home'])){
+	$con='status=1';
+}else{
+	$con="id>0";
+}
 $tbl="tbl_menu";
 $fld="*";
-$con="id>0";
 $od="id DESC";
 $limit=$s.','.$e;
 $post_data = $db->select_data($tbl,$fld,$con,$od,$limit);
