@@ -12,16 +12,26 @@
 			<input type="text" id="txt-name" name="txt-name" class="frm-control">
 			<lable>Link(Don't Update This)</lable>
 			<input type="text" id="txt-link" name="txt-link" class="frm-control">
-			<lable>Oder By</lable>
-			<input type="text" id="txt-od" name="txt-od" class="frm-control">
+			<div class="group" style="display: flex; flex-direction: row; float: left">
+				<lable>Oder By</lable>
+				<input type="text" id="txt-od" name="txt-od" class="frm-control">
+				<lable>Status</lable>
+				<select id="txt-status" name="txt-status" class="frm-control">
+					<option value="1">1</option>
+					<option value="2">2</option>
+				</select>
+			</div>
 			<lable>Color</lable>
 			<input type="text" id="txt-color" name="txt-color" class="frm-control">
-			
-			<lable>Status</lable>
-			<select id="txt-status" name="txt-status" class="frm-control">
-				<option value="1">1</option>
-				<option value="2">2</option>
+			<lable>Slide</lable>
+			<select id="txt-slide" name="txt-slide" class="frm-control">
+				<option value="0">None</option>
+				<option value="1">Slide 1</option>
+				<option value="2">Slide 2</option>
+				<option value="3">Slide 3</option>
+				<option value="4">Slide 4</option>
 			</select>
+
 			<lable>Photo</lable>
 			<div class="img-group">
 				<div class="img-box">
@@ -30,17 +40,16 @@
 				</div>
 			</div>
 		</div>
-	
+
 		<div class="footer">
 			<a class="btn btn-post hover-green">+ Save</a>
 		</div>
 	</form>
 </div>
 <script>
-	$(document).ready(function(){
+	$(document).ready(function() {
 		$("#colorpicker").spectrum({
 			color: "#f00"
 		});
 	});
-	
 </script>

@@ -78,15 +78,20 @@ include BASE_PATH . "include/og.php";
 		?>
 	</section>
 	<script>
-		var url = '<?php echo BASE_URL ?>admin/img/news/';
-		$(document).ready(function() {
-			var img = document.querySelectorAll('.body-text img');
-			for (let i = 0; i < img.length; i++) {
-				var arr = img[i].src.split('/');
-				var lastArr = arr[arr.length - 1];
-				img[i].src = url+lastArr;
+		var baseUrl = '<?php echo BASE_URL ?>';
+		var url = baseUrl + 'admin/img/news/';
+		const img = document.querySelectorAll('.body-text img');
+		for (let i = 0; i < img.length; i++) {
+			const arr = img[i].src.split('/');
+			endArr = arr.slice(0, -3);
+			const imgUrl = endArr[0] + '//' + endArr[2] + '/' + endArr[3]+'/';
+			console.log(imgUrl);
+			if (imgUrl == baseUrl) {
+				const lastArr = arr.slice(-1);
+				img[i].src = url + lastArr;
 			}
-		});
+
+		}
 	</script>
 	<!--	Footer-->
 	<?php include('include/footer.php') ?>

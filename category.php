@@ -46,7 +46,7 @@ include BASE_PATH . "include/og.php";
 				$news_num = $db->get_count_data2('tbl_news',"status=1&& menu_id=$menu_id");
 				echo $news_num[0];
 				$e=0;
-				$s=1;
+				$s=2;
 				//  && menu_id=$menu_id 
 				$post_data = $db->select_data("tbl_news", "*", "status=1&& menu_id=$menu_id", "id DESC", "$e,$s");
 				if ($post_data != 0) {
@@ -74,10 +74,10 @@ include BASE_PATH . "include/og.php";
 				$e+=1;
 				$s+=1;
 				?>
-				<input id="e" value="<?php echo $e ?>" type="text">
-				<input id="s" value="<?php echo $s ?>" type="text">
-				<input id="menu-id" value="<?php echo $menu_id ?>" type="text">
-				<input id="menu-name" value="<?php echo $cate[1] ?>" type="text">
+				e<input id="e" value="<?php echo $e ?>" type="text">
+				s<input id="s" value="<?php echo $s ?>" type="text">
+				id<input id="menu-id" value="<?php echo $menu_id ?>" type="text">
+				name<input id="menu-name" value="<?php echo $cate[1] ?>" type="text">
 				<div id="btn-more">more</div>
 			</div>
 			<?php include BASE_PATH . "include/aside.php" ?>

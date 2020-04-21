@@ -23,6 +23,7 @@ if($post_data!='0'){
 			"link"=>$row[6],
 			"od"=>$row[4],
 			"status"=>$row[5],
+			"slide"=>$row[7],
 			"status2"=>'true',
 			);
 	}

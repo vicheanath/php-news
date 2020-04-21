@@ -98,17 +98,15 @@ function saveMenu(eThis) {
 function saveNews(eThis) {
     var parent = eThis.parents('.frm');
     var edit_id = parent.find('#txt-edit-id');
-    var desc = tinymce.get('txt-des').getContent();
+    var des = tinymce.get('txt-des').getContent();
     var id = parent.find('#txt-id');
     var title = parent.find('#txt-title');
     var menu = parent.find('#txt-menu');
     var status = parent.find('#txt-status');
     var photo = parent.find('#txt-photo');
     var od = parent.find('#txt-od');
-    var des = parent.find('.txt-des');
     var date = parent.find('#txt-date');
-    console.log(desc);
-    des.val(desc);
+    console.log(des);
     if (title.val() == '') {
         alert("Plese Input title..");
         title.focus();
@@ -131,7 +129,7 @@ function saveNews(eThis) {
             status: status.val(),
             photo: photo.val(),
             od: od.val(),
-            des: des.val(),
+            des: des,
         },
         beforeSend: function() {
             eThis.css({

@@ -1,6 +1,6 @@
 //get_Menu data
 function get_menu_data() {
-    var trHead = '<tr> <th>ID</th> <th>Menu Name</th> <th>Photo</th> <th>Color</th> <th>Link</th> <th>OD</th> <th>Status</th> <th>Action</th> </tr>';
+    var trHead = '<tr> <th>ID</th> <th>Menu Name</th> <th>Photo</th> <th>Color</th> <th>Link</th> <th>OD</th> <th>Slide</th> <th>Status</th> <th>Action</th> </tr>';
     tbl.html(trHead);
     $.ajax({
         url: 'action/get_menu_data.php',
@@ -27,6 +27,7 @@ function get_menu_data() {
                     '<td width="55px" style="background:' + data[i].color + '">' + data[i].color + '</td>' +
                     '<td width="55px">' + data[i].link + '</td>' +
                     '<td width="55px">' + data[i].od + '</td>' +
+                    '<td width="55px">' + data[i].slide + '</td>' +
                     '<td width="60px">' + data[i].status + '</td>' +
                     '<td width="55px">' + btnEdit + '</td>' +
                     '</tr>';

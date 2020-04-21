@@ -1,5 +1,5 @@
 //get Edit Data
-tbl.on('click', '.btn-edit', function() {
+tbl.on('click', '.btn-edit', function () {
     var eThis = $(this);
     if (frmOpt == 0) {
         get_edit_menu(eThis);
@@ -20,10 +20,11 @@ function get_edit_menu(eThis) {
     var link = tr.find('td:eq(4)').text();
     var photo = tr.find('td:eq(2) img').attr('alt');
     var od = tr.find('td:eq(5)').text();
-    var status = tr.find('td:eq(6)').text();
+    var slide = tr.find('td:eq(6)').text();
+    var status = tr.find('td:eq(7)').text();
     trInd = tr.index();
     body.append(popup);
-    $('.popup').load("form/" + form[frmOpt] + ".php", function(responseTxt, statusTxt, xhr) {
+    $('.popup').load("form/" + form[frmOpt] + ".php", function (responseTxt, statusTxt, xhr) {
         if (statusTxt == 'success') {
             body.find('.frm .title').text($('#top-header').find('.title').text());
             body.find('.frm #txt-edit-id').val(id);
@@ -33,6 +34,7 @@ function get_edit_menu(eThis) {
             body.find('.frm #txt-link').val(link);
             body.find('.frm #txt-photo').val(photo);
             body.find('.frm #txt-od').val(od);
+            body.find('.frm #txt-slide').val(slide);
             body.find('.frm #txt-status').val(status);
             body.find('.frm .img-box').css({
                 'background-image': 'url("img/product/' + photo + '")'
@@ -51,7 +53,7 @@ function get_edit_news(eThis) {
     var id = tr.find('td:eq(0)').text();
     trInd = tr.index();
     body.append(popup);
-    $('.popup').load("form/" + form[frmOpt] + ".php", function(responseTxt, statusTxt, xhr) {
+    $('.popup').load("form/" + form[frmOpt] + ".php", function (responseTxt, statusTxt, xhr) {
         if (statusTxt == 'success') {
             body.find('.frm .title').text($('#top-header').find('.title').text());
             $.ajax({
@@ -62,21 +64,22 @@ function get_edit_news(eThis) {
                 },
                 cache: false,
                 dataType: "json",
-                success: function(data) {
+                success: function (data) {
                     body.find('.frm #txt-title').val(data[0].title);
                     body.find('.frm #txt-menu').val(data[0].menu_id);
                     body.find('.frm #txt-od').val(data[0].od);
-                    body.find('#tinymce').html(data[0].des);
+                    body.find('.frm #txt-des').html(data[0].des);
                     body.find('.frm #txt-photo').val(data[0].img);
                     body.find('.frm .img-box').css({
                         'background-image': 'url("img/product/' + data[0].img + '")'
                     });;
                     $('.img-box').prepend(delImg);
+                    calleditor();
                 },
             });
             body.find('.frm #txt-edit-id').val(id);
             body.find('.frm #txt-id').val(id);
-            calleditor();
+
         }
         if (statusTxt == "error") {
             alert("Error:" + xhr.status + ":" + xhr.statusText);
@@ -95,7 +98,7 @@ function get_edit_ads(eThis) {
     var status = tr.find('td:eq(5)').text();
     trInd = tr.index();
     body.append(popup);
-    $('.popup').load("form/" + form[frmOpt] + ".php", function(responseTxt, statusTxt, xhr) {
+    $('.popup').load("form/" + form[frmOpt] + ".php", function (responseTxt, statusTxt, xhr) {
         if (statusTxt == 'success') {
             body.find('.frm .title').text($('#top-header').find('.title').text());
             body.find('.frm #txt-edit-id').val(id);
@@ -131,7 +134,7 @@ function get_edit_user(eThis) {
     var status = tr.find('td:eq(5)').text();
     trInd = tr.index();
     body.append(popup);
-    $('.popup').load("form/" + form[frmOpt] + ".php", function(responseTxt, statusTxt, xhr) {
+    $('.popup').load("form/" + form[frmOpt] + ".php", function (responseTxt, statusTxt, xhr) {
         if (statusTxt == 'success') {
             body.find('.frm .title').text($('#top-header').find('.title').text());
             calleditor();

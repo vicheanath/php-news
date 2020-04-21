@@ -75,7 +75,10 @@
 	}
 	section#content .box-content .item a{
 		width: 180px;
-	}
+    }
+    section#content .box-content .item .img-box{
+        height: 100px;
+    }
 	section#content .box-content .item .image {
 		height: 100px;
 		width: 180px;

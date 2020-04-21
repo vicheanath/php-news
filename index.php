@@ -30,15 +30,15 @@ include BASE_PATH . "include/og.php";
 				<div id="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
 				<div class="row b-black">
 					<div class="col-sm-7 slide">
-						<!--							Slide-->
+						<!--Slide-->
 						<?php
-						$od = 1;
+						$slide = 1;
 						include BASE_PATH . ("include/slide.php")
 						?>
 					</div>
 					<div class="col-sm-5 slide">
 						<?php
-						$od = 2;
+						$slide = 2;
 						include BASE_PATH . ("include/slide.php")
 						?>
 					</div>
@@ -46,13 +46,13 @@ include BASE_PATH . "include/og.php";
 				<div class="row b-black">
 					<div class="col-sm-7 slide">
 						<?php
-						$od = 3;
+						$slide = 3;
 						include BASE_PATH . ("include/slide.php")
 						?>
 					</div>
 					<div class="col-sm-5 slide">
 						<?php
-						$od = 4;
+						$slide = 4;
 						include BASE_PATH . ("include/slide.php")
 						?>
 					</div>

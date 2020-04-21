@@ -252,8 +252,8 @@ $uid = $_SESSION['uid'];
 			});
 		});
 		body.on('click', '.frm .btn-close', function() {
+			tinymce.remove();
 			$('.popup').remove();
-			tinyMCE.editors.remove();
 		});
 		//Get form Id
 		$('.sub-menu').on('click', 'ul li,.item', function() {
@@ -317,14 +317,16 @@ $uid = $_SESSION['uid'];
 	});
 
 	function calleditor() {
+		tinymce.remove();
 		var url = location.href;
 		var num = url.length;
-		var part = url.substring(num-9, 0);
+		var part = url.substring(num - 9, 0);
 		console.log(part);
 		tinymce.init({
 			selector: "textarea",
 			images_upload_url: 'upl_img_news.php',
 			images_upload_base_path: part,
+			height: 500,
 			plugins: [
 				"advlist autolink lists link image charmap print preview hr anchor pagebreak",
 				"searchreplace wordcount visualblocks visualchars code fullscreen",
@@ -332,7 +334,8 @@ $uid = $_SESSION['uid'];
 				"emoticons template paste textcolor colorpicker textpattern imagetools media code",
 			],
 			menubar: true,
-			toolbar1: "undo redo | insert | sizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image fontselect | fontsizeselect | forecolor media code",
+			toolbar1: "undo redo | insert | sizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image ",
+			toolbar2: "fontselect | fontsizeselect | forecolor media code",
 		});
 	};
 </script>

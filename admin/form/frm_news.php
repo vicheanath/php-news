@@ -10,8 +10,8 @@ $db = new Database;
 	<form class="upl">
 		<div class="body">
 			<div id="info-news">
-				<input type="text" id="txt-date" value="<?php echo date("Y-m-d h:i:sa"); ?>">
-				<input type="text" id="txt-edit-id" name="txt-edit-id" value="0">
+				<input type="hidden" id="txt-date" value="<?php echo date("Y-m-d h:i:sa"); ?>">
+				<input type="hidden" id="txt-edit-id" name="txt-edit-id" value="0">
 				<lable>ID</lable>
 				<input type="text" id="txt-id" name="txt-id" class="frm-control" readonly>
 				<lable>Title</lable>
@@ -41,7 +41,7 @@ $db = new Database;
 				<div class="img-group">
 					<div class="img-box">
 						<input type="file" id="txt-file" name="txt-file" class="txt-file">
-						<input type="text" name="txt-photo" id="txt-photo" class="txt-photo">
+						<input type="hidden" name="txt-photo" id="txt-photo" class="txt-photo">
 					</div>
 				</div>
 			</div>

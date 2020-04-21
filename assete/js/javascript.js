@@ -38,17 +38,18 @@ $(document).ready(function(){
             slide.eq(ind).show();
         }
     });
-    // var myVar;
-    // myVar = setInterval(autoSlide,3000);
-    // function autoSlide(){
-    //     ind++;
-    //     slide.hide();
-    //     slide.eq(ind).show();
-    //     if(ind>numSlide-1){
-    //         ind=0;
-    //         slide.eq(0).show();
-    //     }
-    // }
+    /* autoSlide();
+    var myVar;
+    myVar = setInterval(autoSlide,5000);
+    function autoSlide(){
+        ind++;
+        slide.hide();
+        slide.eq(ind).show();
+        if(ind>numSlide-1){
+            ind=0;
+            slide.eq(0).show();
+        }
+    } */
 
    $('body').on('click','menu li',function(){
        alert(1);
