@@ -10,6 +10,7 @@ $img = 'assete/images/logo.png';
 
 include BASE_PATH . "include/og.php";
 ?>
+ <title>Vreport News | គេហទំព័រសារពត៏មាន</title>
 </head>
 
 <body>

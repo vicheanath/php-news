@@ -1,5 +1,5 @@
 //Add Data ti my sql
-body.on('click', '.frm .btn-post', function() {
+body.on('click', '.frm .btn-post', function () {
     var eThis = $(this);
     if (frmOpt == 0) {
         saveMenu(eThis);
@@ -41,14 +41,14 @@ function saveMenu(eThis) {
         cache: false,
         processData: false,
         dataType: "json",
-        beforeSend: function() {
+        beforeSend: function () {
             eThis.css({
                 'pointer-events': 'none',
                 'opacity': '0.7'
             });
             eThis.html(myWait);
         },
-        success: function(data) {
+        success: function (data) {
             if (data.dpl == true) {
                 alert("Douplicate name..");
                 eThis.css({
@@ -75,7 +75,13 @@ function saveMenu(eThis) {
             }
             //appen tr
             var img = '<img class="img-tbl" src="img/product/' + photo.val() + '" data-img="img/product/' + photo.val() + '" alt="' + photo.val() + '">';
-            var tr = "<tr> <td>" + id.val() + "</td> <td>" + name.val() + "</td> <td>" + img + "</td> <td>" + color.val() + "</td> <td>" + od.val() + "</td> <td>" + status.val() + "</td> <td>" + btnEdit + "</td> </tr>";
+            var tr = "<tr> <td>" + id.val() + "</td>" +
+                "<td>" + name.val() + "</td>" +
+                "<td>" + img + "</td>" +
+                "<td>" + color.val() + "</td>" +
+                "<td>" + od.val() + "</td>" +
+                "<td>" + status.val() + "</td>" +
+                "<td>" + btnEdit + "</td> </tr>";
             tbl.find('tr:eq(0)').after(tr);
             eThis.css({
                 'pointer-events': 'auto',
@@ -106,7 +112,6 @@ function saveNews(eThis) {
     var photo = parent.find('#txt-photo');
     var od = parent.find('#txt-od');
     var date = parent.find('#txt-date');
-    console.log(des);
     if (title.val() == '') {
         alert("Plese Input title..");
         title.focus();
@@ -131,23 +136,27 @@ function saveNews(eThis) {
             od: od.val(),
             des: des,
         },
-        beforeSend: function() {
+        dataType:"json",
+        beforeSend: function () {
             eThis.css({
                 'pointer-events': 'none',
                 'opacity': '0.7'
             });
             eThis.html(myWait);
         },
-        success: function(data) {
+        success: function (data) {
             if (data.edit == true) {
-                tbl.find('tr:eq(' + trInd + ') td:eq(1)').text(id.val());
-                tbl.find('tr:eq(' + trInd + ') td:eq(2) img').attr('src', 'img/product/' + photo.val() + '');
-                tbl.find('tr:eq(' + trInd + ') td:eq(2) img').attr('alt', photo.val());
-                tbl.find('tr:eq(' + trInd + ') td:eq(3)').text(od.val());
-                tbl.find('tr:eq(' + trInd + ') td:eq(4)').text(status.val());
+                tbl.find('tr:eq(' + trInd + ') td:eq(0)').text(id.val());
+                tbl.find('tr:eq(' + trInd + ') td:eq(1)').text(date.val());
+                tbl.find('tr:eq(' + trInd + ') td:eq(2)').text(title.val());
+                tbl.find('tr:eq(' + trInd + ') td:eq(3) img').attr('src', 'img/product/' + photo.val() + '');
+                tbl.find('tr:eq(' + trInd + ') td:eq(3) img').attr('alt', photo.val());
+                tbl.find('tr:eq(' + trInd + ') td:eq(4)').text(od.val());
+                tbl.find('tr:eq(' + trInd + ') td:eq(5)').text(menu.val());
+                tbl.find('tr:eq(' + trInd + ') td:eq(6)').text(status.val());
                 tbl.find('tr:eq(' + trInd + ') td').css({
                     'background': '#CD3235',
-                    'color': '#fff'
+                    'color': '#fff',
                 });
                 body.find('.popup').remove();
                 return;
@@ -211,14 +220,14 @@ function saveUser(eThis) {
         cache: false,
         processData: false,
         dataType: "json",
-        beforeSend: function() {
+        beforeSend: function () {
             eThis.css({
                 'pointer-events': 'none',
                 'opacity': '0.7'
             });
             eThis.html(myWait);
         },
-        success: function(data) {
+        success: function (data) {
             if (data.dpl == true) {
                 alert("Douplicate name..");
                 eThis.css({
@@ -292,14 +301,14 @@ function saveAds(eThis) {
         cache: false,
         processData: false,
         dataType: "json",
-        beforeSend: function() {
+        beforeSend: function () {
             eThis.css({
                 'pointer-events': 'none',
                 'opacity': '0.7'
             });
             eThis.html(myWait);
         },
-        success: function(data) {
+        success: function (data) {
             if (data.dpl == true) {
                 alert("Douplicate name..");
                 eThis.css({

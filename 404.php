@@ -6,14 +6,13 @@ include BASE_PATH."include/header.php";
 
 
 $url= BASE_URL;
-$title= 'V Report News';
+$title= '404 Page Notfound';
 $des= 'News Web Site in cambodia';
 $img= 'assete/images/logo.png';
+include BASE_URL."include/og.php";
 
-
-
-//include BASE_URL."include/og.php";
 ?>
+<title><?php echo $title ?> | Vreport News</title>
 </head>	
 <body>
     <!--Header-->
@@ -29,11 +28,7 @@ $img= 'assete/images/logo.png';
         <div class="container">
             <!-- slide -->
 			
-			<?php
-			$status_code= http_response_code();
-            $code = $db->status_code();
-            ?>
-			<h1><?php echo $code[$status_code] ?></h1>
+			404 !
   
 		</div>
 	</section>

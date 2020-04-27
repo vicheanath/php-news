@@ -44,7 +44,7 @@ include BASE_PATH . "include/og.php";
 				$date_time = $row[1];
 				$date_time = explode(" ", $date_time);
 		?>
-				<div class="container-fluid" id="img-background" style="background: url('<?php echo BASE_URL ?>admin/img/product/<?php echo $row[4] ?>');"></div>
+				<div class="container-fluid" id="img-background" style="background: url('<?php echo BASE_URL ?>admin/img/product/<?php echo $row[4] ?>');background-repeat: no-repeat;background-position: center;background-size: cover;"></div>
 				<div class="container">
 					<div class="slide-site content-text">
 						<div class="title-news"><?php echo $row[2] ?></div>
@@ -84,7 +84,7 @@ include BASE_PATH . "include/og.php";
 		for (let i = 0; i < img.length; i++) {
 			const arr = img[i].src.split('/');
 			endArr = arr.slice(0, -3);
-			const imgUrl = endArr[0] + '//' + endArr[2] + '/' + endArr[3]+'/';
+			const imgUrl = endArr[0] + '//' + endArr[2] + '/' + endArr[3] + '/';
 			console.log(imgUrl);
 			if (imgUrl == baseUrl) {
 				const lastArr = arr.slice(-1);

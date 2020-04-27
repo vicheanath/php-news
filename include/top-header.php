@@ -1,4 +1,5 @@
 <div id="fb-root"></div>
+<!-- Facebook Script -->
 <script>
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -9,6 +10,7 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 </script>
+<!-- Top Header -->
 <div class="top-header container">
   <div class="top-logo">
     <div class="main-logo">

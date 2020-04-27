@@ -22,4 +22,3 @@
     <meta name="application-name" content="Vreport News" />
     <meta name="theme-color" content="#333" />
     <meta name="keywords" content="Vreport News, vreportnews, breaking news, entertainment, technology, life, sport, cambodia" />
-    <title><?php echo $title ?> | V Report News</title>

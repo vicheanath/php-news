@@ -3,14 +3,15 @@ include "_config_inc.php";
 include BASE_PATH . "admin/action/db/db.php";
 $db = new Database;
 include BASE_PATH . "include/header.php";
-$id=$_GET['menu_id'];
-$row = $db->select_cur_data("tbl_menu","*","name_link='$id'");
-    $url = $row[6];
-	$title = $row[1];
-	$des = $row[1];
-	$img = "admin/img/product/" . $row[2];
+$id = $_GET['menu_id'];
+$row = $db->select_cur_data("tbl_menu", "*", "name_link='$id'");
+$url = $row[6];
+$title = $row[1];
+$des = $row[1];
+$img = "admin/img/product/" . $row[2];
 include BASE_PATH . "include/og.php";
 ?>
+<title><?php echo $title ?> | Vreport News</title>
 </head>
 
 <body>
@@ -37,16 +38,19 @@ include BASE_PATH . "include/og.php";
 						</div>
 						<span class="line" style=" border-top: <?php echo $row[2]; ?>"></span>
 				<?php
-					$menu_id=$row[0];
+						$menu_id = $row[0];
 					}
+				}else{
+					exit(header("Location: /404.php"));
+
 				}
 
 				?>
 				<?php
-				$news_num = $db->get_count_data2('tbl_news',"status=1&& menu_id=$menu_id");
+				$news_num = $db->get_count_data2('tbl_news', "status=1&& menu_id=$menu_id");
 				echo $news_num[0];
-				$e=0;
-				$s=2;
+				$e = 0;
+				$s = 2;
 				//  && menu_id=$menu_id 
 				$post_data = $db->select_data("tbl_news", "*", "status=1&& menu_id=$menu_id", "id DESC", "$e,$s");
 				if ($post_data != 0) {
@@ -54,25 +58,27 @@ include BASE_PATH . "include/og.php";
 						$u_id = $row[9];
 						$date_time = $row[1];
 						$date_time = explode(" ", $date_time);
-						$cate=$db->select_cur_data("tbl_menu", "id,name_link", "id=$row[7]");
+						$cate = $db->select_cur_data("tbl_menu", "id,name_link", "id=$row[7]");
 				?>
-						<a href="<?php echo BASE_URL .$cate[1]; ?>/<?php echo $row[0]; ?>">
-							<div class="cate-item">
-								<div class="image-item" style="background: url('admin/img/product/<?php echo $row[4]; ?>')"></div>
+						<a href="<?php echo BASE_URL . $cate[1]; ?>/<?php echo $row[0]; ?>">
+							<div class="cate-item item">
+								<div class="img-box" style="height:100px;">
+									<div class="image-item image" style="background: url('admin/img/product/<?php echo $row[4]; ?>')"></div>
+								</div>
 								<div class="detail">
-									<div class="title"><?php echo $row[2].$row[0]; ?></div>
+									<div class="title"><?php echo $row[2] . $row[0]; ?></div>
 									<span></span>
 									<div class="date-post"><?php echo  $db->get_post_date($date_time[1], $date_time[0]); ?></div>
 									<div class="date-post"><?php $user = $db->select_cur_data("tbl_user", "id,name", "id=$u_id");
-										echo ("ដោយ៖ " . $user[1]) ?></div>
+															echo ("ដោយ៖ " . $user[1]) ?></div>
 								</div>
 							</div>
 						</a>
 				<?php
 					}
 				}
-				$e+=1;
-				$s+=1;
+				$e += 1;
+				$s += 1;
 				?>
 				e<input id="e" value="<?php echo $e ?>" type="text">
 				s<input id="s" value="<?php echo $s ?>" type="text">
@@ -87,4 +93,63 @@ include BASE_PATH . "include/og.php";
 	<!--	Footer-->
 	<?php include "include/footer.php" ?>
 </body>
+<script>
+	$(document).ready(function() {
+		$('body').on('click', '#btn-more', function() {
+			var e = $('#e');
+			var s = $('#s');
+			var menu_id = $('#menu-id');
+			var menuname = $('#menu-name');
+			var eThis = $(this);
+			$.ajax({
+				url: 'more-data.php',
+				type: 'POST',
+				data: {
+					e: e.val(),
+					s: s.val(),
+					menuid: menu_id.val(),
+				},
+				cache: false,
+				dataType: "json",
+				beforeSend: function() {
+					eThis.html('<i class="fas fa-circle-notch fa-spin"></i>');
+				},
+				success: function(data) {
+					
+					for (var i = 0; i < data.length; i++) {
+						var id = data[i].id;
+						$.ajax({
+							url: 'formart-date.php',
+							type: 'POST',
+							data: {
+								id: id
+							},
+							cache: false,
+							dataType: "json",
+							success: function(data) {
+								console.log(data);
+							}
+						});
+						var catItem = '<a href="' + menuname.val() + '/' + data[i].id + '">' +
+							'<div class="cate-item">' +
+							'<div class="image-item" style="background: url(\'admin/img/product/' + data[i].img + '\')"></div>' +
+							'<div class="detail">' +
+							'<div class="title">' + data[i].title + '-' + data[i].id + '</div>' +
+							'<span></span>' +
+							'<div class="date-post">' + data[i].date + ' </div>' +
+							'</div>' +
+							'</div>' +
+							'</a>';
+						eThis.before(catItem);
+					}
+					s.val(parseInt(s.val()) + 1);
+					e.val(parseInt(e.val()) + 1);
+					eThis.html('more');
+				},
+
+			});
+		});
+	});
+</script>
+
 </html>

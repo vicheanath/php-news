@@ -1,5 +1,8 @@
 <?php
 class Database{
+	// private $user="vteam";
+	// private $pass="ulj2bQTBacS&";
+	// private $dbname="vteam_v_report";
 	private $cnn;
 	private $host="localhost";
 	private $user="root";
@@ -98,8 +101,13 @@ class Database{
 		$this->conn();
 		$sql = "SELECT COUNT(*) AS total FROM $tbl WHERE $con";
 		$result = $this->cnn->query($sql);
+		$num=$result->num_rows;
 		$row=$result->fetch_array();
-		return $row;
+		if($num>0){
+			return $row;
+		}else{
+			return 0;
+		}
 	}
 	//realescap string
 		function real_string($str){

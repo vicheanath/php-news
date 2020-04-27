@@ -21,8 +21,11 @@ $uid = $_SESSION['uid'];
 
 <head>
 	<meta charset="UTF-8">
+	<link rel="SHORTCUT ICON" href="../assete/icon/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="assets/css/fontawesome-free-5.11.2-web/css/all.css">
 	<link rel="stylesheet" href="assets/css/jquery-confirm.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&family=Kantumruy:wght@300;400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
 	<!-- include summernote css/js -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.2.1/skins/content/dark/content.min.css" rel="stylesheet">
 	<script src="assets/js/jquery-3.4.1.js"></script>

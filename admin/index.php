@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
+    <link rel="SHORTCUT ICON" href="../assete/icon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style-login.css">
     <script src="assets/js/jquery-3.4.1.js"></script>
 </head>

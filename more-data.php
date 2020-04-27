@@ -8,8 +8,6 @@ $data = array();
 $post_data = $db->select_data("tbl_news", "id,img,title,date_post,menu_id", "status=1&& menu_id=$menu_id", "id DESC", "$e,$s");
 if ($post_data != '0') {
     foreach ($post_data as $row) {
-        // $date_time = explode(" ", $row[3]);
-        // $db->get_post_date($date_time[1], $date_time[0]);
         $data[] = array(
             "id" => $row[0],
             "img" => $row[1],
@@ -19,4 +17,4 @@ if ($post_data != '0') {
         );
     }
 }
-echo json_encode($data);
+echo json_encode($data, 10, 512);

@@ -22,5 +22,6 @@ $view=0;
 	}else{
 		$db->upd_data("tbl_news","title='".$title."',des='".$des."',img='".$img."',od=".$od.",location=".$location.",menu_id=".$menu.",title_link='".$title_link."',user=".$user.",status=".$status."","id=".$edit_id."");
 		$res['edit']=true;
+		$res['edit1']=1;
 	}
 echo json_encode($res);
