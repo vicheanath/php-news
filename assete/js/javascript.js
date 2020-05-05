@@ -2,20 +2,9 @@ $(document).ready(function () {
     $('.menu-icon').click(function () {
         $('.top-menu').slideToggle();
     });
-    $('.over-read').mouseover(function () {
-        var eThis = $(this);
-        eThis.css("color", "rgb(242, 13, 24)");
-        eThis.find('.bg').css("opacity", "1");
-    });
-    $('.over-read').mouseout(function () {
-        var eThis = $(this);
-        eThis.css("color", "rgb(255, 255, 255)");
-        eThis.find('.bg').css("opacity", "0.5");
-    });
 
-
-    // Slide
     var slide = $('.slide');
+    slide.css({'display':'none'});
     var ind = 0;
     var numSlide = slide.length;
     slide.eq(0).show();

@@ -10,7 +10,7 @@ $db = new Database;
 	<form class="upl">
 		<div class="body">
 			<div id="info-news">
-				<input type="hidden" id="txt-date" value="<?php echo date("Y-m-d h:i:sa"); ?>">
+				<input type="text" id="txt-date" value="<?php echo date("Y-m-d H:i:s"); ?>">
 				<input type="hidden" id="txt-edit-id" name="txt-edit-id" value="0">
 				<lable>ID</lable>
 				<input type="text" id="txt-id" name="txt-id" class="frm-control" readonly>

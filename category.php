@@ -40,9 +40,6 @@ include BASE_PATH . "include/og.php";
 				<?php
 						$menu_id = $row[0];
 					}
-				}else{
-					exit(header("Location: /404.php"));
-
 				}
 
 				?>
@@ -83,7 +80,7 @@ include BASE_PATH . "include/og.php";
 				e<input id="e" value="<?php echo $e ?>" type="text">
 				s<input id="s" value="<?php echo $s ?>" type="text">
 				id<input id="menu-id" value="<?php echo $menu_id ?>" type="text">
-				name<input id="menu-name" value="<?php echo $cate[1] ?>" type="text">
+				name<input id="menu-name" value="<?php echo $cate[1]?>" type="text">
 				<div id="btn-more">more</div>
 			</div>
 			<?php include BASE_PATH . "include/aside.php" ?>
@@ -115,28 +112,17 @@ include BASE_PATH . "include/og.php";
 					eThis.html('<i class="fas fa-circle-notch fa-spin"></i>');
 				},
 				success: function(data) {
-					
+
 					for (var i = 0; i < data.length; i++) {
-						var id = data[i].id;
-						$.ajax({
-							url: 'formart-date.php',
-							type: 'POST',
-							data: {
-								id: id
-							},
-							cache: false,
-							dataType: "json",
-							success: function(data) {
-								console.log(data);
-							}
-						});
+						var date = formarDateTime(data[i].date);
 						var catItem = '<a href="' + menuname.val() + '/' + data[i].id + '">' +
 							'<div class="cate-item">' +
 							'<div class="image-item" style="background: url(\'admin/img/product/' + data[i].img + '\')"></div>' +
 							'<div class="detail">' +
 							'<div class="title">' + data[i].title + '-' + data[i].id + '</div>' +
 							'<span></span>' +
-							'<div class="date-post">' + data[i].date + ' </div>' +
+							'<div class="date-post">' + date + ' </div>' +
+							'<div class="date-post"> ដោយ៖​ ' + date + ' </div>' +
 							'</div>' +
 							'</div>' +
 							'</a>';
@@ -149,6 +135,13 @@ include BASE_PATH . "include/og.php";
 
 			});
 		});
+
+		// function formarDateTime(date) {
+		// 	var day = moment(date).format('dddd');
+		// 	var formateDate = moment(date).format('Do​​ [ខែ] MMMM [ឆ្នាំ] YYYY, h:mm:ss a');
+		// 	var dateTime = day + ' ' + formateDate;
+		// 	return dateTime;
+		// }
 	});
 </script>
 

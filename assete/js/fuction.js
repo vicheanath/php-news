@@ -1,5 +1,58 @@
 $(document).ready(function () {
+    // Date
+    moment.locale('km');
+    var dateT = $('.datef').html();
+    var datefor = formarDateTime(dateT);
+    $('.datef').html(datefor);
+    // frmat Datime 
+    function formarDateTime(date) {
+        var day = moment(date).format('dddd[,]​');
+        var formateDate = moment(dateT).format('​Do​​ [ខែ] MMMM [ឆ្នាំ] YYYY, h:mm:ss a');
+        var dateTime = day + ' ' + formateDate;
+        return dateTime;
+    }
+
     if (window.location.href == url) {
+        // getSlide();
+        for (let i = 0; i < 4; i++) {
+            $.ajax({
+                url: 'admin/action/get_slide_data.php',
+                type: 'POST',
+                data: {
+                    slide: i + 1,
+                },
+                cache: false,
+                dataType: "json",
+                success: function (data) {
+                    for (let i = 0; i < data.length; i++) {
+                        var slide = '<div class="col-sm-6 slide">' +
+                            '<a href="' + data[i].namelink + '"><span class="yellow" style="background: ' + data[i].color + '">' + data[i].cate + '</span></a>' +
+                            '<a href="' + data[i].namelink + '/' + data[i].id + '" class="over-read">' +
+                            '<div class="image-slide" style="background-image: url(\'admin/img/product/' + data[i].img + '\');"></div>' +
+                            '<div class="bg"></div>' +
+                            '<div class="main-des">' +
+                            '<div class="title">' + data[i].title + '</div>' +
+                            '</div>' +
+                            '<div class="date datef">' + formarDateTime(data[i].date) + '</div>' +
+                            '</a>' +
+                            '</div>';
+                        $('#slide-body').append(slide);
+                    }
+                },
+            });
+        }
+        $('.bg').mouseover(function () {
+            console.log(1);
+            var eThis = $(this);
+            eThis.css("color", "rgb(242, 13, 24)");
+            eThis.css("opacity", "1");
+        });
+        $('.bg').mouseout(function () {
+            var eThis = $(this);
+            eThis.css("color", "rgb(255, 255, 255)");
+            eThis.css("opacity", "0.5");
+        });
+        // Get category
         var eNum = 8;
         var sNum = 0;
         var home = true;

@@ -21,6 +21,7 @@ if ($post_data != 0) {
 include BASE_PATH . "include/og.php";
 
 ?>
+<title><?php echo $title ?> | Vreport News</title>
 </head>
 
 <body>
@@ -41,8 +42,6 @@ include BASE_PATH . "include/og.php";
 		if ($post_data != 0) {
 			foreach ($post_data as $row) {
 				$u_id = $row[9];
-				$date_time = $row[1];
-				$date_time = explode(" ", $date_time);
 		?>
 				<div class="container-fluid" id="img-background" style="background: url('<?php echo BASE_URL ?>admin/img/product/<?php echo $row[4] ?>');background-repeat: no-repeat;background-position: center;background-size: cover;"></div>
 				<div class="container">
@@ -54,7 +53,7 @@ include BASE_PATH . "include/og.php";
 							$cate = $db->select_cur_data("tbl_menu", "id,name_link", "id=$row[7]");
 							?>
 						</div>
-						<div class="date"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo $db->get_post_date($date_time[1], $date_time[0]);  ?></div>
+						<div class="date"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="datef"><?php echo $row[1] ?></span></div>
 						<div class="views"><i class="fa fa-eye" aria-hidden="true"></i> <?php echo $row[10] ?></div>
 						<!-- <a href="">
 							<div class="btn-share" style="background: #0088CC"><i class="fab fa-telegram-plane"></i></div>

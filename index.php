@@ -10,7 +10,7 @@ $img = 'assete/images/logo.png';
 
 include BASE_PATH . "include/og.php";
 ?>
- <title>Vreport News | គេហទំព័រសារពត៏មាន</title>
+<title>Vreport News | គេហទំព័រសារពត៏មាន</title>
 </head>
 
 <body>
@@ -26,37 +26,11 @@ include BASE_PATH . "include/og.php";
 	<section id="content">
 		<div class="container">
 			<!-- slide -->
-			<div class="slide-site">
+			<div class="slide-site" style="overflow: hidden">
 				<div id="pre"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
 				<div id="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-				<div class="row b-black">
-					<div class="col-sm-7 slide">
-						<!--Slide-->
-						<?php
-						$slide = 1;
-						include BASE_PATH . ("include/slide.php")
-						?>
-					</div>
-					<div class="col-sm-5 slide">
-						<?php
-						$slide = 2;
-						include BASE_PATH . ("include/slide.php")
-						?>
-					</div>
-				</div>
-				<div class="row b-black">
-					<div class="col-sm-7 slide">
-						<?php
-						$slide = 3;
-						include BASE_PATH . ("include/slide.php")
-						?>
-					</div>
-					<div class="col-sm-5 slide">
-						<?php
-						$slide = 4;
-						include BASE_PATH . ("include/slide.php")
-						?>
-					</div>
+				<div class="b-black" id="slide-body">
+					
 				</div>
 			</div>
 			<!-- endslide -->
@@ -92,9 +66,8 @@ include BASE_PATH . "include/og.php";
 			<!-- endAds -->
 			<!-- category -->
 			<?php
-			//include BASE_PATH . ("include/content-box.php")
 			?>
-
+			<!-- Main-News -->
 			<div class="main-body"></div>
 		</div>
 	</section>
@@ -103,5 +76,10 @@ include BASE_PATH . "include/og.php";
 	include BASE_PATH . ("include/footer.php");
 	?>
 </body>
+<script>
+	$('.over-read').mouseover(function(){
+        alert(1);
+    });
 
+</script>
 </html>

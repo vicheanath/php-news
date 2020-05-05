@@ -1,6 +1,7 @@
 <?php
-
-
+include('db/db.php');
+$db = new Database;
+$slide= $_POST['slide'];
 
 $sql = "SELECT tbl_news.menu_id, tbl_menu.name, tbl_menu.id, tbl_news.title, tbl_news.img, tbl_news.date_post, tbl_news.id, tbl_menu.color, tbl_menu.name_link, tbl_menu.status, tbl_menu.slide
 		FROM tbl_menu
@@ -20,3 +21,4 @@ if ($post_data != 0) {
 		);
 	}
 }
+echo json_encode($data);
