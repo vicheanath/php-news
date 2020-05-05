@@ -1,8 +1,5 @@
 <?php
 class Database{
-	// private $user="vteam";
-	// private $pass="ulj2bQTBacS&";
-	// private $dbname="vteam_v_report";
 	private $cnn;
 	private $host="localhost";
 	private $user="root";
