@@ -1,3 +1,3 @@
 # Vreport News Project
-### Pulic by Nath Vichea Developer
+### Pulic by Developer
 ### using PHP
